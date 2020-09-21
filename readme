@@ -1,0 +1,26 @@
+##Deployment process:
+1. Install pipenv:  
+    $ pip install pipenv
+2. Spawn a shell in a virtual environment to isolate the development and install all required packages from lock file:  
+    $ pipenv shell
+    $ pipenv install 
+3. If there were added new dependencies to Pipfile, it needs to be locked for production environment:  
+    $ pipenv lock
+
+#####*Additional tips:*
+- To check the installed dependencies for security vulnerabilities:  
+   $ pipenv check 
+- To show a graph of the installed dependencies:  
+   $ pipenv graph
+- To uninstall a package/all from virtualenv:  
+    $ pipenv uninstall {package name}/--all
+- To remove the virtualenv:  
+    $ pipenv --rm
+
+##Test running process:
+- To run all tests:  
+    $ pytest
+- To run a pytest html report:
+    $ pytest --html=report.html
+- To run test with short summary output:  
+    $ pytest -q
